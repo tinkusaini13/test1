@@ -1,0 +1,15 @@
+- name: Test for existence /boot/efi/EFI/redhat/grub.cfg
+  stat:
+    path: /boot/efi/EFI/redhat/grub.cfg
+  register: file_exists
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+
+- name: Ensure permission 0700 on /boot/efi/EFI/redhat/grub.cfg
+  file:
+    path: /boot/efi/EFI/redhat/grub.cfg
+    mode: '0700'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - file_exists.stat is defined and file_exists.stat.exists
+  

@@ -1,0 +1,8 @@
+- name: Ensure kernel module 'usb-storage' is disabled
+  lineinfile:
+    create: true
+    dest: /etc/modprobe.d/usb-storage.conf
+    regexp: usb-storage
+    line: install usb-storage /bin/true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

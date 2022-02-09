@@ -1,0 +1,10 @@
+---
+#- name: task
+#  hosts: localhost
+  
+  
+#  tasks:
+    - name : Enable_rsyslog_Service
+      include_tasks: Enable_rsyslog_Service.yml
+    - name : Ensure_rsyslog_is_Installed
+      include_tasks: Ensure_rsyslog_is_Installed.yml

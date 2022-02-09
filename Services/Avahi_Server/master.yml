@@ -1,0 +1,2 @@
+-name : Disable_Avahi_Server_Software
+include_tasks : Disable_Avahi_Server_Software.yml

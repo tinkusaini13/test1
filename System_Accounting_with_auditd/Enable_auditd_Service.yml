@@ -1,0 +1,22 @@
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+
+- name: Enable service auditd
+  block:
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Enable service auditd
+      service:
+        name: auditd
+        enabled: 'yes'
+        state: started
+        masked: 'no'
+      when:
+        - '"audit" in ansible_facts.packages'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - '"audit" in ansible_facts.packages'

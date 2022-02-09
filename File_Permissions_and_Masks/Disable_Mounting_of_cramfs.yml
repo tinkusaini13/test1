@@ -1,0 +1,8 @@
+- name: Ensure kernel module 'cramfs' is disabled
+  lineinfile:
+    create: true
+    dest: /etc/modprobe.d/cramfs.conf
+    regexp: cramfs
+    line: install cramfs /bin/true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

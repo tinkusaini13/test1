@@ -1,0 +1,50 @@
+---
+#- name: tasks
+#  hosts: localhost
+#  ignore_errors: true
+#  become: true
+#  tasks:
+    - name: Configure_Periodic_Execution_of_AIDE
+      include: Configure_Periodic_Execution_of_AIDE.yml
+
+    - name: Configure_SSH_to_use_System_Crypto_Policy
+      include: Configure_SSH_to_use_System_Crypto_Policy.yml
+
+    - name: Configure_System_Cryptography_Policy
+      include: Configure_System_Cryptography_Policy.yml
+
+    - name: Ensure_gpgcheck_Enabled_In_Main_yum_Configuration
+      include: Ensure_gpgcheck_Enabled_In_Main_yum_Configuration.yml
+
+        # - name: Ensure_home_Located_On_Separate_partition
+        #include: Ensure_home_Located_On_Separate_partition.yml
+
+    - name: Ensure_Only_Users_Logged_In_To_Real_tty_Can_Execute_Sudo-sudo_use_pty
+      include: Ensure_Only_Users_Logged_In_To_Real_tty_Can_Execute_Sudo-sudo_use_pty.yml
+
+    - name: Ensure_Sudo_Logfile_Exists-sudo_logfile
+      include: Ensure_Sudo_Logfile_Exists-sudo_logfile.yml
+
+        # - name: Ensure_tmp_Located_On_Separate_Partition
+        #include: Ensure_tmp_Located_On_Separate_Partition.yml
+
+        #    - name: Ensure_var_Located_On_Separate_Partition
+        #include: Ensure_var_Located_On_Separate_Partition.yml
+
+        #    - name: Ensure_varlog_Located_On_Separate_Partition
+        #include: Ensure_varlog_Located_On_Separate_Partition.yml
+
+        # - name: Ensure_varlogaudit_Located_On_Separate_Partition
+        # include: Ensure_varlogaudit_Located_On_Separate_Partition.yml
+
+        # - name: Ensure_vartmp_Located_On_Separate_Partition
+        # include: Ensure_vartmp_Located_On_Separate_Partition.yml
+
+    - name: Install_sudo_Package
+      include: Install_sudo_Package.yml
+
+        # - name: Make_sure_that_the_dconf_databases_are_up-to-date_with_regards_to_respective_keyfiles
+        # include: Make_sure_that_the_dconf_databases_are_up-to-date_with_regards_to_respective_keyfiles.yml
+
+        # - name: Verify_Integrity_with_AIDE
+        # include: Verify_Integrity_with_AIDE.yml

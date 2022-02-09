@@ -1,0 +1,5 @@
+- name: Ensure audit is installed
+  package:
+    name: audit
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]

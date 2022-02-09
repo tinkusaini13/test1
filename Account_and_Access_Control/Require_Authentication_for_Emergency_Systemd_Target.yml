@@ -1,0 +1,7 @@
+- name: require emergency mode password
+  lineinfile:
+    create: true
+    dest: /usr/lib/systemd/system/emergency.service
+    regexp: ^#?ExecStart=
+    line: ExecStart=-/usr/lib/systemd/systemd-sulogin-shell emergency
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]

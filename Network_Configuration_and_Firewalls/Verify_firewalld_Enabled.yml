@@ -1,0 +1,17 @@
+- name: Enable service firewalld
+  block:
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Enable service firewalld
+      service:
+        name: firewalld
+        enabled: 'yes'
+        state: started
+        masked: 'no'
+      when:
+        - '"firewalld" in ansible_facts.packages'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

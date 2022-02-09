@@ -1,0 +1,19 @@
+- name: Find /etc/grub.d/ files
+  find:
+    paths:
+      - /etc/grub.d/
+    follow: true
+  register: grub
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  
+
+- name: Ensure SELinux Not Disabled in grub files
+  replace:
+    dest: '{{ item.path }}'
+    regexp: (selinux|enforcing)=0
+  with_items:
+    - '{{ grub.files }}'
+    - path: /etc/grub2.cfg
+    - path: /etc/default/grub
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

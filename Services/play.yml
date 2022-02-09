@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  ignore_errors: true
+  become: true
+  tasks:
+    - include_tasks: master.yml

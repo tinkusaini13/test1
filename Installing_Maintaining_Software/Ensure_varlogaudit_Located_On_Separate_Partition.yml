@@ -1,0 +1,2 @@
+Audit logs are stored in the /var/log/audit directory. Ensure that /var/log/audit has its own partition or logical volume at installation time, or migrate it using LVM. 
+Make absolutely certain that it is large enough to store all audit logs that will be created by the auditing daemon.

@@ -1,0 +1,5 @@
+- name: Ensure openldap-clients is removed
+  package:
+    name: openldap-clients
+    state: absent
+ 

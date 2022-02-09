@@ -1,0 +1,154 @@
+#- name: tasks
+#  hosts: localhost
+#  ignore_errors: true
+#  become: true
+#  tasks:
+    - name: Configure_auditd_admin_space_left_Action_on_Low_Disk_Space
+      include_tasks: Configure_auditd_admin_space_left_Action_on_Low_Disk_Space.yml
+
+    - name: Configure_auditd_mail_acct_Action_on_Low_Disk_Space
+      include_tasks: Configure_auditd_mail_acct_Action_on_Low_Disk_Space.yml
+
+    - name: Configure_auditd_max_log_file_action_Upon_Reaching_Maximum_Log_size
+      include_tasks: Configure_auditd_max_log_file_action_Upon_Reaching_Maximum_Log_size.yml
+
+    - name: Configure_auditd_Max_Log_File_Size
+      include_tasks: Configure_auditd_Max_Log_File_Size.yml
+
+    - name: Configure_auditd_space_left_Action_on_Low_Disk_Space
+      include_tasks: Configure_auditd_space_left_Action_on_Low_Disk_Space.yml
+
+    - name: Enable_auditd_Service
+      include_tasks: Enable_auditd_Service.yml
+
+    - name: Enable_Auditing_for_Processes_Which_Start_Prior_to_the_Audit_Daemon
+      include_tasks: Enable_Auditing_for_Processes_Which_Start_Prior_to_the_Audit_Daemon.yml
+
+    - name: Ensure_auditd_Collects_System_Administrator_Actions
+      include_tasks: Ensure_]auditd_Collects_System_Administrator_Actions.yml
+
+    - name: Ensure_auditd_Collects_File_Deletion_Events_by_User-rename
+      include_tasks: Ensure_auditd_Collects_File_Deletion_Events_by_User-rename.yml
+
+    - name: Ensure_auditd_Collects_File_Deletion_Events_by_User-renameat
+      include_tasks: Ensure_auditd_Collects_File_Deletion_Events_by_User-renameat.yml
+
+    - name: Ensure_auditd_Collects_File_Deletion_Events_by_User-unlink
+      include_tasks: Ensure_auditd_Collects_File_Deletion_Events_by_User-unlink.yml
+
+    - name: Ensure_auditd_Collects_File_Deletion_Events_by_User-unlinkat
+      include_tasks: Ensure_auditd_Collects_File_Deletion_Events_by_User-unlinkat.yml
+
+    - name: Ensure_auditd_Collects_Information_on_Exporting_to_Media_(successful) 
+      include_tasks: Ensure_auditd_Collects_Information_on_Exporting_to_Media_(successful).yml
+
+    - name: Ensure_auditd_Collects_Information_on_Kernel_Module_Loading-init_module
+      include_tasks: Ensure_auditd_Collects_Information_on_Kernel_Module_Loading-init_module.yml
+
+    - name: Ensure_auditd_Collects_Information_on_Kernel_Module_Unloading-delete_module
+      include_tasks: Ensure_auditd_Collects_Information_on_Kernel_Module_Unloading-delete_module.yml
+
+    - name: Ensure_the_audit_Subsystem_is_Installed
+      include_tasks: Ensure_the_audit_Subsystem_is_Installed.yml
+
+    - name: Extend_Audit_Backlog_Limit_for_the_Audit_Daemon
+      include_tasks: Extend_Audit_Backlog_Limit_for_the_Audit_Daemon.yml
+
+    - name: Make_the_auditd_Configuration_Immutable
+      include_tasks: Make_the_auditd_Configuration_Immutable.yml
+
+    - name: Record_Attempts_to_Alter_Logon_and_Logout_Events_-_faillock
+      include_tasks: Record_Attempts_to_Alter_Logon_and_Logout_Events_-_faillock.yml
+
+    - name: Record_Attempts_to_Alter_Logon_and_Logout_Events-lastlog
+      include_tasks: Record_Attempts_to_Alter_Logon_and_Logout_Events-lastlog.yml
+
+    - name: Record_Attempts_to_Alter_Process_and_Session_Initiation_Information
+      include_tasks: Record_Attempts_to_Alter_Process_and_Session_Initiation_Information.yml
+
+    - name: Record_Attempts_to_Alter_the_localtime_File
+      include_tasks: Record_Attempts_to_Alter_the_localtime_File.yml
+
+    - name: Record_attempts_to_alter_time_through_adjtimex
+      include_tasks: Record_attempts_to_alter_time_through_adjtimex.yml
+
+    - name: Record_Attempts_to_Alter_Time_Through_clock_settime
+      include_tasks: Record_Attempts_to_Alter_Time_Through_clock_settime.yml
+
+    - name: Record_Attempts_to_Alter_Time_Through_stime
+      include_tasks: Record_Attempts_to_Alter_Time_Through_stime.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-chmod
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-chmod.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-chown
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-chown.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchmod
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchmod.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchmodat
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchmodat.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchown
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchown.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchownat
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fchownat.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fremovexattr
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fremovexattr.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fsetxattr
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-fsetxattr.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lchown
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lchown.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lremovexattr
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lremovexattr.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lsetxatt
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-lsetxatt.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-removexattr
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-removexattr.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-setxattr
+      include_tasks: Record_Events_that_Modify_the_Systems_Discretionary_Access_Controls-setxattr.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Mandatory_Access_Controls
+      include_tasks: Record_Events_that_Modify_the_Systems_Mandatory_Access_Controls.yml
+
+    - name: Record_Events_that_Modify_the_Systems_Network_Environment
+      include_tasks: Record_Events_that_Modify_the_Systems_Network_Environment.yml
+ 
+    - name: Record_Events_that_Modify_UserGroup_Information-etcgroup
+      include_tasks: Record_Events_that_Modify_UserGroup_Information-etcgroup.yml
+
+    - name: Record_Events_that_Modify_UserGroup_Information-etcpasswd
+      include_tasks: Record_Events_that_Modify_UserGroup_Information-etcpasswd.yml
+
+    - name: Record_Events_that_Modify_UserGroup_Information-etcsecurityopasswd
+      include_tasks: Record_Events_that_Modify_UserGroup_Information-etcsecurityopasswd.yml
+
+    - name: Record_Events_that_Modify_UserGroup_Information-etcshadow
+      include_tasks: Record_Events_that_Modify_UserGroup_Information-etcshadow.yml
+
+    - name: Record_Events_that_Modify_UserGroupInformation-etcgshadow
+      include_tasks: Record_Events_that_Modify_UserGroupInformation-etcgshadow.yml
+
+    - name: Record_Unsuccessful_Access_Attempts_to_Files-creat
+      include_tasks: Record_Unsuccessful_Access_Attempts_to_Files-creat.yml
+
+    - name: Record_Unsuccessful_Access_Attempts_to_Files-ftruncate 
+      include_tasks: Record_Unsuccessful_Access_Attempts_to_Files-ftruncate.yml
+
+    - name: Record_Unsuccessful_Access_Attempts_to_Files-open
+      include_tasks: Record_Unsuccessful_Access_Attempts_to_Files-open.yml
+
+    - name: Record_Unsuccessful_Access_Attempts_to_Files-openat
+      include_tasks: Record_Unsuccessful_Access_Attempts_to_Files-openat.yml
+
+    - name: Record_Unsuccessful_Access_Attempts_to_Files-truncate
+      include_tasks: Record_Unsuccessful_Access_Attempts_to_Files-truncate.yml

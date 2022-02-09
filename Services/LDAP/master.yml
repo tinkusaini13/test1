@@ -1,0 +1,2 @@
+- name : Ensure-LDAP-client-is-not-installed
+ include_tasks : Ensure-LDAP-client-is-not-installed.yml

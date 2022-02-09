@@ -1,0 +1,95 @@
+---
+#- name: tasks
+# hosts: localhost
+# ignore_errors: true
+# become: true
+# tasks: 
+    - name: Configure_Accepting_router_Advertisements_on_All_IPv6_Interfaces
+      include_tasks: Configure_Accepting_router_Advertisements_on_All_IPv6_Interfaces.yml
+
+    - name: Configure_Kernel_Parameter_for_Accepting_Secure_Redirects_By_Default
+      include_tasks: Configure_Kernel_Parameter_for_Accepting_Secure_Redirects_By_Default.yml
+
+    - name: Deactivate_Wireless_Network_Interfaces
+      include_tasks: Deactivate_Wireless_Network_Interfaces.yml
+
+    - name: Disable_Accepting_ICMP_Redirects_for_All_IPv4_Interfaces
+      include_tasks: Disable_Accepting_ICMP_Redirects_for_All_IPv4_Interfaces.yml
+
+    - name: Disable_Accepting_ICMP_Redirects_for_All_IPv6_Interfaces
+      include_tasks: Disable_Accepting_ICMP_Redirects_for_All_IPv6_Interfaces.yml
+
+    - name: Disable_Accepting_Router_Advertisements_on_all_IPv6_Interfaces_by_Default
+      include_tasks: Disable_Accepting_Router_Advertisements_on_all_IPv6_Interfaces_by_Default.yml
+
+    - name: Disable_DCCP_Support
+      include_tasks: Disable_DCCP_Support.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_ICMP_Redirects_by_Default_on_IPv4_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_ICMP_Redirects_by_Default_on_IPv4_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_ICMP_Redirects_by_Default_on_IPv6_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_ICMP_Redirects_by_Default_on_IPv6_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_Secure_ICMP_Redirects_on_all_IPv4_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_Secure_ICMP_Redirects_on_all_IPv4_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_all_IPv4_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_all_IPv4_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_all_IPv6_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_all_IPv6_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_IPv4_Interfaces_by_Default
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_IPv4_Interfaces_by_Default.yml
+
+    - name: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_IPv6_Interfaces_by_Default
+      include_tasks: Disable_Kernel_Parameter_for_Accepting_Source-Routed_Packets_on_IPv6_Interfaces_by_Default.yml
+
+    - name: Disable_Kernel_Parameter_for_IP_Forwarding_on_IPv4_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_IP_Forwarding_on_IPv4_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_IPv6_Forwarding
+      include_tasks: Disable_Kernel_Parameter_for_IPv6_Forwarding.yml
+
+    - name: Disable_Kernel_Parameter_for_Sending_ICMP_Redirects_on_all_IPv4_Interfaces
+      include_tasks: Disable_Kernel_Parameter_for_Sending_ICMP_Redirects_on_all_IPv4_Interfaces.yml
+
+    - name: Disable_Kernel_Parameter_for_Sending_ICMP_Redirects_on_all_IPv4_Interfaces_by_Default
+      include_tasks: Disable_Kernel_Parameter_for_Sending_ICMP_Redirects_on_all_IPv4_Interfaces_by_Default.yml
+
+    - name: Disable_RDS_Support
+      include_tasks: Disable_RDS_Support.yml
+
+    - name: Disable_SCTP_Support
+      include_tasks: Disable_SCTP_Support.yml
+
+    - name: Disable_TIPC_Support
+      include_tasks: Disable_TIPC_Support.yml
+
+    - name: Enable_Kernel_Parameter_to_Ignore_Bogus_ICMP_Error_Responses_on_IPv4_Interfaces
+      include_tasks: Enable_Kernel_Parameter_to_Ignore_Bogus_ICMP_Error_Responses_on_IPv4_Interfaces.yml
+
+    - name: Enable_Kernel_Parameter_to_Ignore_ICMP_Broadcast_Echo_Requests_on_IPv4_Interfaces
+      include_tasks: Enable_Kernel_Parameter_to_Ignore_ICMP_Broadcast_Echo_Requests_on_IPv4_Interfaces.yml
+
+    - name: Enable_Kernel_Parameter_to_Log_Martian_Packets_on_all_IPv4_Interfaces
+      include_tasks: Enable_Kernel_Parameter_to_Log_Martian_Packets_on_all_IPv4_Interfaces.yml
+
+    - name: Enable_Kernel_Parameter_to_Use_Reverse_Path_Filtering_on_all_IPv4_Interfaces_by_Default
+      include_tasks: Enable_Kernel_Parameter_to_Use_Reverse_Path_Filtering_on_all_IPv4_Interfaces_by_Default.yml
+
+    - name: Enable_Kernel_Parameter_to_Use_TCP_Syncookies_on_IPv4_Interfaces
+      include_tasks: Enable_Kernel_Parameter_to_Use_TCP_Syncookies_on_IPv4_Interfaces.yml
+
+    - name: Enable_Kernel_Paremeter_to_Log_Martian_Packets_on_all_IPv4_Interfaces_by_Default
+      include_tasks: Enable_Kernel_Paremeter_to_Log_Martian_Packets_on_all_IPv4_Interfaces_by_Default.yml
+
+    - name: Install_firewalld_Package
+      include_tasks: Install_firewalld_Package.yml
+
+        #  - name: Set_Default_firewalld_Zone_for_Incoming_Packets
+        #include_tasks: Set_Default_firewalld_Zone_for_Incoming_Packets.yml
+
+    - name: Verify_firewalld_Enabled
+      include_tasks: Verify_firewalld_Enabled.yml

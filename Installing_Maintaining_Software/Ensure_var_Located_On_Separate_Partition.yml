@@ -1,0 +1,2 @@
+The /var directory is used by daemons and other system services to store frequently-changing data. 
+Ensure that /var has its own partition or logical volume at installation time, or migrate it using LVM.

@@ -1,0 +1,2 @@
+System logs are stored in the /var/log directory. 
+Ensure that /var/log has its own partition or logical volume at installation time, or migrate it using LVM.

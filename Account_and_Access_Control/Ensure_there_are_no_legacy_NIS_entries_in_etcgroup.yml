@@ -1,0 +1,13 @@
+- name: Backup the old /etc/group file
+  copy:
+    src: /etc/group
+    dest: /etc/group-
+    remote_src: true
+ 
+
+- name: Remove lines starting with + from /etc/group
+  lineinfile:
+    regexp: ^\+.*$
+    state: absent
+    path: /etc/group
+ 

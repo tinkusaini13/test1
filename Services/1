@@ -1,0 +1,164 @@
+---
+- name: tasks
+  hosts: localhost
+  ignore_errors: true
+  become: true
+  tasks: 
+     - name : Disable_Avahi_Server_Software
+       include_tasks : Avahi_Server/Disable_Avahi_Server_Software.txt
+
+     - name : Enable-cron-Service
+       include_tasks : Cron_and_At_Daemons/Enable-cron-Service.txt
+
+     - name : Verify_Group_Who_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_cron.daily.txt
+
+     - name : Verify_Group_Who_Owns_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.daily.txt
+
+     - name : Verify_Group_Who_Owns_cron.hourly
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.hourly.txt
+
+     - name : Verify_Group_Who_Owns_cron.monthly
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.monthly.txt
+
+     - name : Verify_Group_Who_Owns_cron.weekly
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.weekly.txt
+
+     - name : Verify_Group_Who_Owns_Crontab
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_Crontab.txt
+
+     - name : Verify_Owner_on_cron.d
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.d.txt
+
+     - name : Verify_Owner_on_cron.daily
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.daily.txt
+
+     - name : Verify_Owner_on_cron.hourly
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.hourly.txt
+
+     - name : Verify_Owner_on_cron.weekly
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.weekly.txt
+
+     - name : Verify_Owner_on_crontab
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_crontab.txt
+
+     - name : Verify_Permissions_on_cron.d
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.d.txt
+
+     - name : Verify_Permissions_on_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.daily.txt
+
+     - name : Verify_Permissions_on_cron.hourly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.hourly.txt
+
+     - name : Verify_Permissions_on_cron.monthly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.monthly.txt
+
+     - name : Verify_Permissions_on_cron.weekly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.weekly.txt
+
+     - name : Verify_Permissions_on_crontab
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_crontab.txt
+
+     - name : Verify-Group_Who_Owns_cron.d
+       include_tasks : Cron_and_At_Daemons/Verify-Group_Who_Owns_cron.d.txt
+
+     - name : Disable_DHCP-Service
+       include_tasks : DHCP/Disable_DHCP-Service.txt
+
+     - name : Disable_named_Service
+       include_tasks : DNS_Server/Disable_named_Service.txt
+
+     - name : Disable_vsftpd_Service
+       include_tasks : FTP_Server/Disable_vsftpd_Service.txt
+
+     - name : Disable_Dovecot_Service
+       include_tasks : IMAP_and_POP3_Server/Disable_Dovecot_Service.txt
+
+     - name : Ensure-LDAP-client-is-not-installed
+       include_tasks : LDAP/Ensure-LDAP-client-is-not-installed.txt
+
+     - name : Disable-Postfix-Network-Listening
+       include_tasks: Mail_Server_Software/Disable-Postfix-Network-Listening.txt
+
+     - name : A-remote_time_server_for_Chrony_is_configured
+       include_tasks : Network_Time_Protocol/A-remote_time_server_for_Chrony_is_configured.txt 
+
+     - name : Ensure_that_chronyd_is_running_under_chrony_user_account
+       include_tasks : Network_Time_Protocol/Ensure_that_chronyd_is_running_under_chrony_user_account.txt
+
+     - name : Disable_Network_File-System-(nfs)
+       include_tasks: NFS_and_RPC/Disable_Network_File-System-(nfs).txt
+
+     - name : Disable-rpcbind-Service
+       include_tasks : NFS_and_RPC/Disable-rpcbind-Service.txt
+
+     - name : Disable-the-CUPS-Service
+       include_tasks : Print_Support/Disable-the-CUPS-Service.txt
+
+     - name : Disable-Squid 
+       include_tasks : Proxy_Server/Disable-Squid.txt
+
+     - name : Disable-Samba 
+       include_tasks : Samba_(SMB)/Disable-Samba .txt
+
+     - name : snmp-server
+       include_tasks : snmp_server/snmp-server.txt
+
+     - name : Disable_graphical-user-interface
+       include_tasks: SSH_Server/Disable_graphical-user-interface.txt
+
+     - name : Disable-Host-Based-Authentication
+       include_tasks: SSH_Server/Disable-Host-Based-Authentication.txt
+
+     - name : Disable-SSH-Access-via-Empty-Passwords
+       include_tasks: SSH_Server/Disable-SSH-Access-via-Empty-Passwords.txt
+
+     - name : Disable-SSH-Root-Login
+       include_tasks: SSH_Server/Disable-SSH-Root-Login.txt
+
+     - name : Disable-SSH-Support-for-.rhosts-Files
+       include_tasks: SSH_Server/Disable-SSH-Support-for-.rhosts-Files.txt
+
+     - name : Disable-SSH-TCP-Forwarding
+       include_tasks: SSH_Server/Disable-SSH-TCP-Forwarding.txt
+
+     - name : Do-Not-Allow-SSH-Environment-Options
+       include_tasks: SSH_Server/Do-Not-Allow-SSH-Environment-Options.txt
+
+     - name : Ensure-SSH-MaxStartups-is-configured
+       include_tasks: SSH_Server/Ensure-SSH-MaxStartups-is-configured.txt
+
+     - name : Set-SSH-authentication-attempt-limit
+       include_tasks: SSH_Server/Set-SSH-authentication-attempt-limit.txt
+
+     - name : Set-SSH-Client-Alive-Count-Max
+       include_tasks: SSH_Server/Set-SSH-Client-Alive-Count-Max.txt
+
+     - name : Set-SSH-Daemon-LogLevel-to-VERBOSE
+       include_tasks: SSH_Server/Set-SSH-Daemon-LogLevel-to-VERBOSE.txt
+
+     - name : Set-SSH-Idle-Timeout-Interval
+       include_tasks: SSH_Server/Set-SSH-Idle-Timeout-Interval.txt
+
+     - name : Set-SSH-MaxSessions-limit
+       include_tasks: SSH_Server/Set-SSH-MaxSessions-limit.txt
+
+     - name : Verify-Group-Who-Owns-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Group-Who-Owns-SSH-Server-config-file.txt
+
+     - name : Verify-Owner-on-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Owner-on-SSH-Server-config-file.txt
+
+     - name : Verify-Permissions-on-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Permissions-on-SSH-Server-config-file.txt
+
+     - name : Verify-Permissions-on-SSH-Server-Public-pub-Key-Files
+       include_tasks: SSH_Server/Verify-Permissions-on-SSH-Server-Public-pub-Key-Files.txt
+
+     - name : Disable-httpd-Service
+       include_tasks : Web_Server/Disable-httpd-Service.txt
+
+     - name : Disable-X11-Forwarding
+       include_tasks : X_Window_System/Disable-X11-Forwarding.txt

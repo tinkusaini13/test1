@@ -1,0 +1,12 @@
+- name: Backup the old /etc/passwd file
+  copy:
+    src: /etc/passwd
+    dest: /etc/passwd-
+    remote_src: true
+ 
+- name: Remove lines starting with + from /etc/passwd
+  lineinfile:
+    regexp: ^\+.*$
+    state: absent
+    path: /etc/passwd
+ 

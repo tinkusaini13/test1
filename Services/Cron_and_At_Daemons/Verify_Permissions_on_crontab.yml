@@ -1,0 +1,15 @@
+- name: Test for existence /etc/crontab
+  stat:
+    path: /etc/crontab
+  register: file_exists
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+
+- name: Ensure permission 0600 on /etc/crontab
+  file:
+    path: /etc/crontab
+    mode: '0600'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - file_exists.stat is defined and file_exists.stat.exists
+ 

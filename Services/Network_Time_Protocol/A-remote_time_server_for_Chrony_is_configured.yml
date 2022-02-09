@@ -1,0 +1,32 @@
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+ 
+- name: XCCDF Value var_multiple_time_servers # promote to variable
+  set_fact:
+    var_multiple_time_servers: !!str 0.rhel.pool.ntp.org,1.rhel.pool.ntp.org,2.rhel.pool.ntp.org,3.rhel.pool.ntp.org
+  tags:
+    - always
+
+- name: Detect if chrony is already configured with pools or servers
+  find:
+    path: /etc
+    patterns: chrony.conf
+    contains: ^[\s]*(?:server|pool)[\s]+[\w]+
+  register: chrony_servers
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - '"chrony" in ansible_facts.packages'
+  
+- name: Configure remote time servers
+  lineinfile:
+    path: /etc/chrony.conf
+    line: server {{ item }}
+    state: present
+    create: true
+  loop: '{{ var_multiple_time_servers.split(",") }}'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - '"chrony" in ansible_facts.packages'
+    - chrony_servers.matched == 0
+   

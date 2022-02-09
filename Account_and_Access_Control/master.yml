@@ -1,0 +1,112 @@
+---
+#- name: Running first tasks
+# hosts: localhost
+# become: true
+# ignore_errors: true
+# tasks:
+    - name: Enable_GNOME3_Login_Warning_Banner
+      include_tasks: Enable_GNOME3_Login_Warning_Banner.yml
+
+    - name: Enforce_usage_of_pam_wheel_for_su_authentication
+      include_tasks: Enforce_usage_of_pam_wheel_for_su_authentication.yml
+  
+        #- name: Ensure_All_Accounts_on_the_System_Have_Unique_Names
+      #  include_tasks: Ensure_All_Accounts_on_the_System_Have_Unique_Names.yml
+    
+    - name: Ensure-PAM_Enforces_Password_Requirements_Authentication_Retry_Prompts_Permitted_Per_Session
+      include_tasks: Ensure-PAM_Enforces_Password_Requirements_Authentication_Retry_Prompts_Permitted_Per_Session.yml
+    
+    - name: Ensure_PAM_Enforces_Password_Requirements_Minimum_Different_Categories
+      include_tasks: Ensure_PAM_Enforces_Password_Requirements_Minimum_Different_Categories.yml
+    
+    - name: Ensure_PAM_Enforces_Password_Requirements_Minimum_Length
+      include_tasks: Ensure_PAM_Enforces_Password_Requirements_Minimum_Length.yml
+    
+        #- name: Ensure_that_Roots_Path_Does_Not_Include_Relative_Paths_or_Null_Directories
+      # include_tasks: Ensure_that_Roots_Path_Does_Not_Include_Relative_Paths_or_Null_Directories.yml
+    
+    - name: Ensure_that_Roots_Path_Does_Not_Include_World_or_Group_Writable_Directories
+      include_tasks: Ensure_that_Roots_Path_Does_Not_Include_World_or_Group_Writable_Directories.yml
+   
+        #- include_tasks: Ensure_that_System_Accounts_Do_Not_Run_a_Shell_Upon_Login.yml
+    
+    - name: Ensure_the_Default_Bash_Umask_is_Set_Correctly
+      include_tasks: Ensure_the_Default_Bash_Umask_is_Set_Correctly.yml
+
+    - name: Ensure_the_Default_Umasks_is_Set_Correctly_in_etc_profile
+      include_tasks: Ensure_the_Default_Umasks_is_Set_Correctly_in_etc_profile.yml
+
+    - name: Ensure_the_Default_Umask_s_is_Set_Correctly_in_login_defs
+      include_tasks:  Ensure_the_Default_Umask_s_is_Set_Correctly_in_login_defs.yml
+
+    - name: Ensure_there_are_no_legacy_NIS_entries_in_etcgroup
+      include_tasks: Ensure_there_are_no_legacy_NIS_entries_in_etcgroup.yml
+
+    - name: Ensure_there_are_no_legacy_NIS_entries_in_etcpasswd
+      include_tasks: Ensure_there_are_no_legacy_NIS_entries_in_etcpasswd.yml
+
+    - name: Ensure_there_are_no_legacy_NIS_entries_in_etcshadow
+      include_tasks: Ensure_there_are_no_legacy_NIS_entries_in_etcshadow.yml
+
+    - name: Limit_Password_Reuse_password_auth
+      include_tasks: Limit_Password_Reuse_password_auth.yml
+
+    - name: Limit_Password_Reuse_system_auth
+      include_tasks: Limit_Password_Reuse_system_auth.yml
+
+    - name: Modify_the_System_Login_Banner
+      include_tasks: Modify_the_System_Login_Banner.yml
+
+    - name: Modify_the_System_Message_of_the_Day_Banner
+      include_tasks: Modify_the_System_Message_of_the_Day_Banner.yml
+
+    - name: Require_Authentication_for_Emergency_Systemd_Target
+      include_tasks: Require_Authentication_for_Emergency_Systemd_Target.yml
+
+    - name: Require_Authentication_for_Single_User_Mode
+      include_tasks: Require_Authentication_for_Single_User_Mode.yml
+
+    - name: Set_Account_Expiration_Following_Inactivity
+      include_tasks: Set_Account_Expiration_Following_Inactivity.yml
+
+    - name: Set_Interactive_Session_Timeout
+      include_tasks: Set_Interactive_Session_Timeout.yml
+
+
+  #- include_tasks: Set_PAM_s_Password_Hashing_Algorithm.yml
+    
+        #- name: Set_Password_Maximum_Age
+        #include_tasks: Set_Password_Maximum_Age.yml
+
+        #- name: Set_Password_Minimum_Age
+        #include_tasks: Set_Password_Minimum_Age.yml
+
+    #- name: Set_Password_Warning_Age
+    #  include_tasks: Set_Password_Warning_Age.yml
+
+        #- name: Set_the_GNOME3_Login_Warning_Banner_Text 
+        #include_tasks: Set_the_GNOME3_Login_Warning_Banner_Text.yml
+
+        #- name: Verify_group_ownership_of_Message_of_the_Day_Banner
+        #include_tasks: Verify_group_ownership_of_Message_of_the_Day_Banner.yml
+
+        #- name: Verify_Group_Ownership_of_System_Login_Banner
+        #include_tasks: Verify_Group_Ownership_of_System_Login_Banner.yml
+        #ignore_errors: true
+        #- name: Verify_No_netrc_Files_Exist
+        #include_tasks: Verify_No_netrc_Files_Exist.yml
+
+        #- name: Verify_Only_Root_Has_UID_0
+        #include_tasks: Verify_Only_Root_Has_UID_0.yml
+
+    - name: Verify_ownership_of_Message_of_the_Day_Banner
+      include_tasks: Verify_ownership_of_Message_of_the_Day_Banner.yml
+
+    - name: Verify_ownership_of_System_Login_Banner
+      include_tasks: Verify_ownership_of_System_Login_Banner.yml
+
+    - name: Verify_permissions_on_Message_of_the_Day_Banner
+      include_tasks: Verify_permissions_on_Message_of_the_Day_Banner.yml
+
+    - name: Verify_permissions_on_System_Login_Banner
+      include_tasks: Verify_permissions_on_System_Login_Banner.yml

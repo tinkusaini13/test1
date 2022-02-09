@@ -1,0 +1,12 @@
+- name: XCCDF Value var_accounts_user_umask # promote to variable
+  set_fact:
+    var_accounts_user_umask: !!str 027
+  tags:
+    - always
+
+- name: Set user umask in /etc/profile
+  replace:
+    path: /etc/profile
+    regexp: umask.*
+    replace: umask {{ var_accounts_user_umask }}
+ 

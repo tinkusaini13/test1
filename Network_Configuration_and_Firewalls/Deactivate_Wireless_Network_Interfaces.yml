@@ -1,0 +1,4 @@
+- name: Deactivate Wireless Network Interfaces
+  command: nmcli radio wifi off
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

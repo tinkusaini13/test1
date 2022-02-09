@@ -1,0 +1,20 @@
+- name: Configure_SELinux_Policy
+- include_tasks: Configure_SELinux_Policy.txt
+
+- name: Ensure_No_Daemons_are_Unconfined_by_SELinux
+- include_tasks: Ensure_No_Daemons_are_Unconfined_by_SELinux.txt
+
+- name: Ensure_SELinux_Not_Disabled
+- include_tasks: Ensure_SELinux_Not_Disabled.txt
+
+- name: Ensure_SELinux_State_is_Enforcing
+- include_tasks: Ensure_SELinux_State_is_Enforcing.txt
+
+- name: Install_libselinux_Package
+- include_tasks: Install_libselinux_Package.txt
+
+- name: Uninstall_mcstrans_Package
+- include_tasks: Uninstall_mcstrans_Package.txt
+
+- name: Uninstall_setroubleshoot_Package
+- include_tasks: Uninstall_setroubleshoot_Package.txt

@@ -1,0 +1,36 @@
+- name: Disable service avahi-daemon
+  block:
+
+    - name: Gather the service facts
+      service_facts: null
+
+    - name: Disable service avahi-daemon
+      systemd:
+        name: avahi-daemon.service
+        enabled: 'no'
+        state: stopped
+        masked: 'yes'
+      when: '"avahi-daemon.service" in ansible_facts.services'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  
+- name: Unit Socket Exists - avahi-daemon.socket
+  command: systemctl list-unit-files avahi-daemon.socket
+  args:
+    warn: false
+  register: socket_file_exists
+  changed_when: false
+  ignore_errors: true
+  check_mode: false
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  
+
+- name: Disable socket avahi-daemon
+  systemd:
+    name: avahi-daemon.socket
+    enabled: 'no'
+    state: stopped
+    masked: 'yes'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - '"avahi-daemon.socket" in socket_file_exists.stdout_lines[1]'
+ 

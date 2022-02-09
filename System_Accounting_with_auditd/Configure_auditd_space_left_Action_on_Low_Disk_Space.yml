@@ -1,0 +1,18 @@
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+
+- name: XCCDF Value var_auditd_space_left_action # promote to variable
+  set_fact:
+    var_auditd_space_left_action: !!str email
+ 
+
+- name: Configure auditd space_left Action on Low Disk Space
+  lineinfile:
+    dest: /etc/audit/auditd.conf
+    line: space_left_action = {{ var_auditd_space_left_action }}
+    regexp: ^\s*space_left_action\s*=\s*.*$
+    state: present
+    create: true
+  when: '"audit" in ansible_facts.packages'
+ 

@@ -1,0 +1,12 @@
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+ 
+- name: disable core dumps with limits
+  lineinfile:
+    dest: /etc/security/limits.conf
+    regexp: ^[^#].*core
+    line: '*        hard       core      0'
+    create: true
+  when: '"pam" in ansible_facts.packages'
+ 

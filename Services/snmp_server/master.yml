@@ -1,0 +1,2 @@
+- name : snmp-server
+ include_tasks : snmp-server.yml

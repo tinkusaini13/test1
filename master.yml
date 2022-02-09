@@ -1,0 +1,36 @@
+---
+- name: Starting Executing tasks
+  hosts: all
+  ignore_errors: true
+  become: true
+  serial: 100
+  ignore_errors: true
+  tasks:
+    - name: Account_and_Access_Control
+      include_tasks: Account_and_Access_Control/master.yml
+
+    - name: File_Permissions_and_Masks
+      include_tasks: File_Permissions_and_Masks/master.yml
+
+    - name: Installing_\&_Maintaining_Software
+      include_tasks: Installing_Maintaining_Software/master.yml
+
+    - name: SELinux
+      include_tasks: SELinux/master.yml
+
+    - name: System_Accounting_with_auditd
+      include_tasks: System_Accounting_with_auditd/master.yml
+
+
+    - name: Configure_Syslog
+      include_tasks: Configure_Syslog/master.yml
+
+    - name: GRUB2_bootloader_configuration
+      include_tasks: GRUB2_bootloader_configuration/master.yml
+
+    - name: Network_Configuration_and_Firewalls
+      include_tasks: Network_Configuration_and_Firewalls/master.yml
+
+    - name: Services
+      include_tasks: Services/master.yml
+

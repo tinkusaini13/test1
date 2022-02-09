@@ -1,0 +1,7 @@
+- name: Ensure kernel module 'dccp' is disabled
+  lineinfile:
+    create: true
+    dest: /etc/modprobe.d/dccp.conf
+    regexp: dccp
+    line: install dccp /bin/true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]

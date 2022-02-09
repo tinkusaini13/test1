@@ -1,0 +1,6 @@
+- name: Ensure rsyslog is installed
+  package:
+    name: rsyslog
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

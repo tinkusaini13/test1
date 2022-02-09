@@ -1,0 +1,12 @@
+- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+ 
+
+- name: Ensure owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+ 

@@ -1,0 +1,5 @@
+- name : A-remote_time_server_for_Chrony_is_configured
+ include_tasks : A-remote_time_server_for_Chrony_is_configured.yml 
+
+- name : Ensure_that_chronyd_is_running_under_chrony_user_account
+ include_tasks : Ensure_that_chronyd_is_running_under_chrony_user_account.yml

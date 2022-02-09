@@ -1,0 +1,5 @@
+- name: Ensure ypbind is removed
+  package:
+    name: ypbind
+    state: absent
+ 

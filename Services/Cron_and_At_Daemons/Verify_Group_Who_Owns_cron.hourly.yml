@@ -1,0 +1,15 @@
+- name: Test for existence /etc/cron.hourly/
+  stat:
+    path: /etc/cron.hourly/
+  register: file_exists
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+
+- name: Ensure group owner 0 on /etc/cron.hourly/
+  file:
+    path: /etc/cron.hourly/
+    group: '0'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - file_exists.stat is defined and file_exists.stat.exists
+ 

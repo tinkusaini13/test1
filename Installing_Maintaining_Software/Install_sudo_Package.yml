@@ -1,0 +1,6 @@
+- name: Ensure sudo is installed
+  package:
+    name: sudo
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

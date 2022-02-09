@@ -1,0 +1,8 @@
+- name: Ensure kernel module 'sctp' is disabled
+  lineinfile:
+    create: true
+    dest: /etc/modprobe.d/sctp.conf
+    regexp: sctp
+    line: install sctp /bin/true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

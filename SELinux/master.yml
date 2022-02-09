@@ -1,0 +1,27 @@
+---
+#- name: tasks
+#  hosts: localhost
+#  ignore_errors: true
+#  become: true
+#  tasks:
+
+    - name: Configure_SELinux_Policy
+      include_tasks: Configure_SELinux_Policy.yml
+
+        # - name: Ensure_No_Daemons_are_Unconfined_by_SELinux
+        #include_tasks: Ensure_No_Daemons_are_Unconfined_by_SELinux.yml
+
+    - name: Ensure_SELinux_Not_Disabled
+      include_tasks: Ensure_SELinux_Not_Disabled.yml
+
+    - name: Ensure_SELinux_State_is_Enforcing
+      include_tasks: Ensure_SELinux_State_is_Enforcing.yml
+
+    - name: Install_libselinux_Package
+      include_tasks: Install_libselinux_Package.yml
+
+    - name: Uninstall_mcstrans_Package
+      include_tasks: Uninstall_mcstrans_Package.yml
+
+    - name: Uninstall_setroubleshoot_Package
+      include_tasks: Uninstall_setroubleshoot_Package.yml

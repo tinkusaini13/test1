@@ -1,0 +1,5 @@
+- name: Ensure telnet is removed
+  package:
+    name: telnet
+    state: absent
+ 

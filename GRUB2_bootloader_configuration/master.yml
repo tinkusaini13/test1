@@ -1,0 +1,29 @@
+---
+#- name: tasks
+#  hosts: localhost
+#  become: true
+#  ignore_errors: true
+#  tasks:
+  #  - name: Set_Boot_Loader_Password_in_grub2
+  #    include_tasks: Set_Boot_Loader_Password_in_grub2.yml
+
+   # - name: Set_the_UEFI_Boot_Loader_Password
+   #   include_tasks: Set_the_UEFI_Boot_Loader_Password.yml
+
+    - name: Verify_boot_grub2_grub_cfg_User_Ownership
+      include_tasks: Verify_boot_grub2_grub_cfg_User_Ownership.yml
+
+    - name: Verify_bootgrub2_grub_cfg_Permissions
+      include_tasks: Verify_bootgrub2_grub_cfg_Permissions.yml
+
+    - name: Verify_bootgrub2grub_cfg_Group_Ownership
+      include_tasks: Verify_bootgrub2grub_cfg_Group_Ownership.yml
+
+    - name: Verify_the_UEFI_Boot_Loader_grub_cfg_Group_Ownership
+      include_tasks: Verify_the_UEFI_Boot_Loader_grub_cfg_Group_Ownership.yml
+
+    - name: Verify_the_UEFI_Boot_Loader_grub_cfg_Permissions
+      include_tasks: Verify_the_UEFI_Boot_Loader_grub_cfg_Permissions.yml
+
+    - name: Verify_the_UEFI_Boot_Loader_grub_cfg_User_Ownership
+      include_tasks: Verify_the_UEFI_Boot_Loader_grub_cfg_User_Ownership.yml

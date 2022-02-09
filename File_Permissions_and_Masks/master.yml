@@ -1,0 +1,142 @@
+  - name: Add_nodev_Option_to_dev_shm
+    include_tasks: Add_nodev_Option_to_dev_shm.yml
+
+  - name: Add_nodev_Option_to_home
+    include_tasks: Add_nodev_Option_to_home.yml
+
+  - name: Add_nodev_Option_to_tmp
+    include_tasks: Add_nodev_Option_to_tmp.yml
+
+  - name: Add_nodev_Option_to_var_tmp
+    include_tasks: Add_nodev_Option_to_var_tmp.yml
+
+  - name: Add_noexec_Option_to_dev_shm
+    include_tasks: Add_noexec_Option_to_dev_shm.yml
+
+  - name: Add_noexec_Option_to_tmp
+    include_tasks: Add_noexec_Option_to_tmp.yml
+
+  - name: Add_noexec_Option_to_var_tmp
+    include_tasks: Add_noexec_Option_to_var_tmp.yml
+
+  - name: Add_nosuid_Option_to_dev_shm
+    include_tasks: Add_nosuid_Option_to_dev_shm.yml
+  - name: Add_nosuid_Option_to_tmp
+    include_tasks: Add_nosuid_Option_to_tmp.yml
+
+  - name: Add_nosuid_Option_to_var_tmp
+    include_tasks: Add_nosuid_Option_to_var_tmp.yml
+
+  - name: Disable_core_dump_backtraces
+    include_tasks: Disable_core_dump_backtraces.yml
+
+  - name: Disable_Core_Dumps_for_All_Users
+    include_tasks: Disable_Core_Dumps_for_All_Users.yml
+
+  - name: Disable_Core_Dumps_for_SUID_program
+    include_tasks: Disable_Core_Dumps_for_SUID_program.yml
+
+  - name: Disable_Modprobe_Loading_of_USB_Storage_Drive
+    include_tasks: Disable_Modprobe_Loading_of_USB_Storage_Drive.yml
+
+  - name: Disable_Mounting_of_cramfs
+    include_tasks: Disable_Mounting_of_cramfs.yml
+
+  - name: Disable_Mounting_of_squashfs
+    include_tasks: Disable_Mounting_of_squashfs.yml
+
+  - name: Disable_Mounting_of_udf
+    include_tasks: Disable_Mounting_of_udf.yml
+
+  - name: Disable_storing_core_dump
+    include_tasks: Disable_storing_core_dump.yml
+
+  - name: Disable_the_Automounter
+    include_tasks: Disable_the_Automounter.yml
+
+  - name: Enable_Randomized_Layout_of_Virtual_Address_Space
+    include_tasks: Enable_Randomized_Layout_of_Virtual_Address_Space.yml
+
+    #- name: Ensure_All_Files_Are_Owned_by_a_Group
+    #include_tasks: Ensure_All_Files_Are_Owned_by_a_Group.yml
+
+    #- name: Ensure_All_Files_Are_Owned_by_a_User
+    #include_tasks: Ensure_All_Files_Are_Owned_by_a_User.yml
+
+    #- name: Ensure_No_World-Writable_Files_Exist
+    #include_tasks: Ensure_No_World-Writable_Files_Exist.yml
+
+  - name: Verify_Group_Who_Owns_Backup_group_File
+    include_tasks: Verify_Group_Who_Owns_Backup_group_File.yml
+
+  - name: Verify_Group_Who_Owns_Backup_gshadow_File
+    include_tasks: Verify_Group_Who_Owns_Backup_gshadow_File.yml
+
+  - name: Verify_Group_Who_Owns_Backup_passwd_File
+    include_tasks: Verify_Group_Who_Owns_Backup_passwd_File.yml
+
+  - name: Verify_Group_Who_Owns_Backup_shadow_File
+    include_tasks: Verify_Group_Who_Owns_Backup_shadow_File.yml
+
+  - name: Verify_Group_Who_Owns_group_file
+    include_tasks: Verify_Group_Who_Owns_group_file.yml
+
+  - name: Verify_Group_Who_Owns_gshadow_File
+    include_tasks: Verify_Group_Who_Owns_gshadow_File.yml
+
+  - name: Verify_Group_Who_Owns_passwd_File
+    include_tasks: Verify_Group_Who_Owns_passwd_File.yml
+
+  - name: Verify_Group_Who_Owns_shadow_File
+    include_tasks: Verify_Group_Who_Owns_shadow_File.yml
+
+  - name: Verify_Permissions_on_Backup_group_File
+    include_tasks: Verify_Permissions_on_Backup_group_File.yml
+
+  - name: Verify_Permissions_on_Backup_gshadow_File
+    include_tasks: Verify_Permissions_on_Backup_gshadow_File.yml
+
+  - name: Verify_Permissions_on_Backup_passwd_File
+    include_tasks: Verify_Permissions_on_Backup_passwd_File.yml
+
+  - name: Verify_Permissions_on_Backup_shadow_File
+    include_tasks: Verify_Permissions_on_Backup_shadow_File.yml
+
+  - name: Verify_Permissions_on_group_File
+    include_tasks: Verify_Permissions_on_group_File.yml
+
+  - name: Verify_Permissions_on_gshadow_File
+    include_tasks: Verify_Permissions_on_gshadow_File.yml
+
+  - name: Verify_Permissions_on_passwd_File
+    include_tasks: Verify_Permissions_on_passwd_File.yml
+
+  - name: Verify_Permissions_on_shadow_File
+    include_tasks: Verify_Permissions_on_shadow_File.yml
+
+  - name: Verify_that_all_World-Writable_Directories_Have_Sticky_Bits_Set
+    include_tasks: Verify_that_all_World-Writable_Directories_Have_Sticky_Bits_Set.yml
+
+  - name: Verify_User_Who_Owns_Backup_group_File
+    include_tasks: Verify_User_Who_Owns_Backup_group_File.yml
+
+  - name: Verify_User_Who_Owns_Backup_gshadow_File
+    include_tasks: Verify_User_Who_Owns_Backup_gshadow_File.yml
+
+  - name: Verify_User_Who_Owns_Backup_passwd_File
+    include_tasks: Verify_User_Who_Owns_Backup_passwd_File.yml
+
+  - name: Verify_User_Who_Owns_Backup_shadow_File
+    include_tasks: Verify_User_Who_Owns_Backup_shadow_File.yml
+
+  - name: Verify_User_Who_Owns_group_File
+    include_tasks: Verify_User_Who_Owns_group_File.yml
+
+  - name: Verify_User_Who_Owns_gshadow_File
+    include_tasks: Verify_User_Who_Owns_gshadow_File.yml
+
+  - name: Verify_User_Who_Owns_passwd_File
+    include_tasks: Verify_User_Who_Owns_passwd_File.yml
+
+  - name: Verify_User_Who_Owns_shadow_File
+    include_tasks: Verify_User_Who_Owns_shadow_File.yml

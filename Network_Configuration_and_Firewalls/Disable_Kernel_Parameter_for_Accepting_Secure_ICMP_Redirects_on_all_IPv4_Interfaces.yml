@@ -1,0 +1,14 @@
+- name: XCCDF Value sysctl_net_ipv4_conf_all_secure_redirects_value # promote to variable
+  set_fact:
+    sysctl_net_ipv4_conf_all_secure_redirects_value: !!str 0
+  tags:
+    - always
+
+- name: Ensure sysctl net.ipv4.conf.all.secure_redirects is set
+  sysctl:
+    name: net.ipv4.conf.all.secure_redirects
+    value: '{{ sysctl_net_ipv4_conf_all_secure_redirects_value }}'
+    state: present
+    reload: true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

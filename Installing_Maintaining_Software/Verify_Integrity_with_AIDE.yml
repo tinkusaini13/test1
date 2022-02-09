@@ -1,0 +1,6 @@
+- name: Ensure aide is installed
+  package:
+    name: aide
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

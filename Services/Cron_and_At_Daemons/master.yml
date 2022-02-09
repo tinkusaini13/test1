@@ -1,0 +1,56 @@
+- name : Enable-cron-Service
+include_tasks : Enable-cron-Service.yml
+
+- name : Verify_Group_Who_cron.daily
+ include_tasks : Verify_Group_Who_cron.daily.yml
+
+- name : Verify_Group_Who_Owns_cron.daily
+ include_tasks : Verify_Group_Who_Owns_cron.daily.yml
+
+- name : Verify_Group_Who_Owns_cron.hourly
+ include_tasks : Verify_Group_Who_Owns_cron.hourly.yml
+
+- name : Verify_Group_Who_Owns_cron.monthly
+ include_tasks : Verify_Group_Who_Owns_cron.monthly.yml
+
+- name : Verify_Group_Who_Owns_cron.weekly
+ include_tasks : Verify_Group_Who_Owns_cron.weekly.yml
+
+- name : Verify_Group_Who_Owns_Crontab
+ include_tasks : Verify_Group_Who_Owns_Crontab.yml
+
+- name : Verify_Owner_on_cron.d
+ include_tasks : Verify_Owner_on_cron.d.yml
+
+- name : Verify_Owner_on_cron.daily
+ include_tasks : Verify_Owner_on_cron.daily.yml
+
+- name : Verify_Owner_on_cron.hourly
+ include_tasks : Verify_Owner_on_cron.hourly.yml
+
+- name : Verify_Owner_on_cron.weekly
+ include_tasks : Verify_Owner_on_cron.weekly.yml
+
+- name : Verify_Owner_on_crontab
+ include_tasks : Verify_Owner_on_crontab.yml
+
+- name : Verify_Permissions_on_cron.d
+ include_tasks : Verify_Permissions_on_cron.d.yml
+
+- name : Verify_Permissions_on_cron.daily
+ include_tasks : Verify_Permissions_on_cron.daily.yml
+
+- name : Verify_Permissions_on_cron.hourly
+ include_tasks : Verify_Permissions_on_cron.hourly.yml
+
+- name : Verify_Permissions_on_cron.monthly
+ include_tasks : Verify_Permissions_on_cron.monthly.yml
+
+- name : Verify_Permissions_on_cron.weekly
+ include_tasks : Verify_Permissions_on_cron.weekly.yml
+
+- name : Verify_Permissions_on_crontab
+ include_tasks : Verify_Permissions_on_crontab.yml
+
+- name : Verify-Group_Who_Owns_cron.d
+ include_tasks : Verify-Group_Who_Owns_cron.d.yml

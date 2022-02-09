@@ -1,0 +1,14 @@
+- name : Ensure_rsyncd_service_is_diabled
+ include_tasks : Ensure_rsyncd_service_is_diabled.yml
+
+- name : Remove_NIS_Client
+ include_tasks : Remove_NIS_Client.yml
+
+- name : Remove_Rsh_Trust_Files
+ include_tasks : Remove_Rsh_Trust_Files.yml 
+
+- name : Remove_telnet_Clients
+ include_tasks : Remove_telnet_Clients.yml 
+
+- name : Uninstall_xinetd_Package
+ include_tasks : Uninstall_xinetd_Package.yml

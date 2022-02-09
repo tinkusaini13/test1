@@ -1,0 +1,3 @@
+Ensure accounts on the system have unique names. To ensure all accounts have unique names, run the following command:
+$ sudo getent passwd | awk -F: '{ print $1}' | uniq -d
+If a username is returned, change or delete the username.

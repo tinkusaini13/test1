@@ -1,0 +1,6 @@
+- name: Ensure mcstrans is removed
+  package:
+    name: mcstrans
+    state: absent
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

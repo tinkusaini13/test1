@@ -1,0 +1,6 @@
+- name: Configure SSH to use System Crypto Policy
+  lineinfile:
+    dest: /etc/sysconfig/sshd
+    state: absent
+    regexp: ^\s*CRYPTO_POLICY.*$
+  

@@ -1,0 +1,13 @@
+- name: Backup the old /etc/shadow file
+  copy:
+    src: /etc/shadow
+    dest: /etc/shadow-
+    remote_src: true
+ 
+
+- name: Remove lines starting with + from /etc/shadow
+  lineinfile:
+    regexp: ^\+.*$
+    state: absent
+    path: /etc/shadow
+   

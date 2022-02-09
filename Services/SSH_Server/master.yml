@@ -1,0 +1,50 @@
+- name : Disable_graphical-user-interface
+ include_tasks: Disable_graphical-user-interface.yml
+
+- name : Disable-Host-Based-Authentication
+ include_tasks: Disable-Host-Based-Authentication.yml
+
+- name : Disable-SSH-Access-via-Empty-Passwords
+ include_tasks: Disable-SSH-Access-via-Empty-Passwords.yml
+
+- name : Disable-SSH-Root-Login
+ include_tasks: Disable-SSH-Root-Login.yml
+
+- name : Disable-SSH-Support-for-.rhosts-Files
+ include_tasks: Disable-SSH-Support-for-.rhosts-Files.yml
+
+- name : Disable-SSH-TCP-Forwarding
+ include_tasks: Disable-SSH-TCP-Forwarding.yml
+
+- name : Do-Not-Allow-SSH-Environment-Options
+ include_tasks: Do-Not-Allow-SSH-Environment-Options.yml
+
+- name : Ensure-SSH-MaxStartups-is-configured
+ include_tasks: Ensure-SSH-MaxStartups-is-configured.yml
+
+- name : Set-SSH-authentication-attempt-limit
+ include_tasks: Set-SSH-authentication-attempt-limit.yml
+
+- name : Set-SSH-Client-Alive-Count-Max
+ include_tasks: Set-SSH-Client-Alive-Count-Max.yml
+
+- name : Set-SSH-Daemon-LogLevel-to-VERBOSE
+ include_tasks: Set-SSH-Daemon-LogLevel-to-VERBOSE.yml
+
+- name : Set-SSH-Idle-Timeout-Interval
+ include_tasks: Set-SSH-Idle-Timeout-Interval.yml
+
+- name : Set-SSH-MaxSessions-limit
+ include_tasks: Set-SSH-MaxSessions-limit.yml
+
+- name : Verify-Group-Who-Owns-SSH-Server-config-file
+ include_tasks: Verify-Group-Who-Owns-SSH-Server-config-file.yml
+
+- name : Verify-Owner-on-SSH-Server-config-file
+ include_tasks: Verify-Owner-on-SSH-Server-config-file.yml
+
+- name : Verify-Permissions-on-SSH-Server-config-file
+ include_tasks: Verify-Permissions-on-SSH-Server-config-file.yml
+
+- name : Verify-Permissions-on-SSH-Server-Public-pub-Key-Files
+ include_tasks: Verify-Permissions-on-SSH-Server-Public-pub-Key-Files.yml

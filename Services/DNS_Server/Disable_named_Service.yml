@@ -1,0 +1,37 @@
+- name: Disable service named
+  block:
+
+    - name: Gather the service facts
+      service_facts: null
+
+    - name: Disable service named
+      systemd:
+        name: named.service
+        enabled: 'no'
+        state: stopped
+        masked: 'yes'
+      when: '"named.service" in ansible_facts.services'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+
+- name: Unit Socket Exists - named.socket
+  command: systemctl list-unit-files named.socket
+  args:
+    warn: false
+  register: socket_file_exists
+  changed_when: false
+  ignore_errors: true
+  check_mode: false
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  
+
+- name: Disable socket named
+  systemd:
+    name: named.socket
+    enabled: 'no'
+    state: stopped
+    masked: 'yes'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - '"named.socket" in socket_file_exists.stdout_lines[1]'
+  

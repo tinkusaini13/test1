@@ -1,0 +1,8 @@
+- name: Ensure kernel module 'tipc' is disabled
+  lineinfile:
+    create: true
+    dest: /etc/modprobe.d/tipc.conf
+    regexp: tipc
+    line: install tipc /bin/true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

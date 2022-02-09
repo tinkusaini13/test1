@@ -1,0 +1,5 @@
+- name : Disable_Network_File-System-(nfs)
+ include_tasks : Disable_Network_File-System-(nfs).yml
+
+- name : Disable-rpcbind-Service
+ include_tasks : Disable-rpcbind-Service.yml

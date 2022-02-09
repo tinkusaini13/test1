@@ -1,0 +1,16 @@
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+
+- name: XCCDF Value var_auditd_action_mail_acct # promote to variable
+  set_fact:
+    var_auditd_action_mail_acct: !!str root
+
+
+- name: Configure auditd mail_acct Action on Low Disk Space
+  lineinfile:
+    dest: /etc/audit/auditd.conf
+    line: action_mail_acct = {{ var_auditd_action_mail_acct }}
+    state: present
+    create: true
+  when: '"audit" in ansible_facts.packages'

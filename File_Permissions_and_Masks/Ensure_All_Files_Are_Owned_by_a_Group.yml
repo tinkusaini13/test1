@@ -1,0 +1,4 @@
+If any files are not owned by a group, then the cause of their lack of group-ownership should be investigated. Following this, the files should be deleted or assigned to an appropriate group. The following command will discover and print any files on local partitions which do not belong to a valid group:
+$ df --local -P | awk '{if (NR!=1) print $6}' | sudo xargs -I '{}' find '{}' -xdev -nogroup
+To search all filesystems on a system including network mounted filesystems the following command can be run manually for each partition:
+$ sudo find PARTITION -xdev -nogroup

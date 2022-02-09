@@ -1,0 +1,15 @@
+- name: Test for existence /etc/cron.weekly/
+  stat:
+    path: /etc/cron.weekly/
+  register: file_exists
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+
+- name: Ensure permission 0700 on /etc/cron.weekly/
+  file:
+    path: /etc/cron.weekly/
+    mode: '0700'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - file_exists.stat is defined and file_exists.stat.exists
+ 

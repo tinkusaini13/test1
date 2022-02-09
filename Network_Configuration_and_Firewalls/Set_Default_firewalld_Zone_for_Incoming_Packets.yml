@@ -1,0 +1,2 @@
+To set the default zone to drop for the built-in default zone which processes incoming IPv4 and IPv6 packets, modify the following line in /etc/firewalld/firewalld.conf to be:
+DefaultZone=drop

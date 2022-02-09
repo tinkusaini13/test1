@@ -1,0 +1,14 @@
+- name: XCCDF Value sysctl_net_ipv6_conf_all_accept_source_route_value # promote to variable
+  set_fact:
+    sysctl_net_ipv6_conf_all_accept_source_route_value: !!str 0
+  tags:
+    - always
+
+- name: Ensure sysctl net.ipv6.conf.all.accept_source_route is set
+  sysctl:
+    name: net.ipv6.conf.all.accept_source_route
+    value: '{{ sysctl_net_ipv6_conf_all_accept_source_route_value }}'
+    state: present
+    reload: true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

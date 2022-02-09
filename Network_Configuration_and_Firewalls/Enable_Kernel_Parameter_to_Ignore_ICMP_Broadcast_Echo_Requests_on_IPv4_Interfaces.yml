@@ -1,0 +1,14 @@
+- name: XCCDF Value sysctl_net_ipv4_icmp_echo_ignore_broadcasts_value # promote to variable
+  set_fact:
+    sysctl_net_ipv4_icmp_echo_ignore_broadcasts_value: !!str 1
+  tags:
+    - always
+
+- name: Ensure sysctl net.ipv4.icmp_echo_ignore_broadcasts is set
+  sysctl:
+    name: net.ipv4.icmp_echo_ignore_broadcasts
+    value: '{{ sysctl_net_ipv4_icmp_echo_ignore_broadcasts_value }}'
+    state: present
+    reload: true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

@@ -1,0 +1,3 @@
+If any account other than root has a UID of 0, this misconfiguration should be investigated and the accounts other than root should be removed or have their UID changed.
+If the account is associated with system commands or applications the UID should be changed to one greater than "0" but less than "1000." 
+Otherwise assign a UID greater than "1000" that has not already been assigned.

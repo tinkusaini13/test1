@@ -1,0 +1,3 @@
+By default, DConf uses a binary database as a data backend. The system-level database is compiled from keyfiles in the /etc/dconf/db/ directory by the
+dconf update
+command.

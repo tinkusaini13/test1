@@ -1,0 +1,14 @@
+- name: XCCDF Value sysctl_net_ipv4_conf_default_rp_filter_value # promote to variable
+  set_fact:
+    sysctl_net_ipv4_conf_default_rp_filter_value: !!str 1
+  tags:
+    - always
+
+- name: Ensure sysctl net.ipv4.conf.default.rp_filter is set
+  sysctl:
+    name: net.ipv4.conf.default.rp_filter
+    value: '{{ sysctl_net_ipv4_conf_default_rp_filter_value }}'
+    state: present
+    reload: true
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  

@@ -1,0 +1,14 @@
+- name: Test for existence /etc/cron.monthly/
+  stat:
+    path: /etc/cron.monthly/
+  register: file_exists
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 
+- name: Ensure owner 0 on /etc/cron.monthly/
+  file:
+    path: /etc/cron.monthly/
+    owner: '0'
+  when:
+    - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+    - file_exists.stat is defined and file_exists.stat.exists
+ 

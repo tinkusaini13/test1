@@ -1,0 +1,6 @@
+- name: Ensure libselinux is installed
+  package:
+    name: libselinux
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+ 

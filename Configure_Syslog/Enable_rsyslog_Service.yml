@@ -1,0 +1,17 @@
+- name: Enable service rsyslog
+  block:
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Enable service rsyslog
+      service:
+        name: rsyslog
+        enabled: 'yes'
+        state: started
+        masked: 'no'
+      when:
+        - '"rsyslog" in ansible_facts.packages'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+   

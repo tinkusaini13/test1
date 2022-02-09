@@ -1,0 +1,163 @@
+---
+#- name: tasks
+#  hosts: localhost
+#  ignore_errors: true
+#  become: true
+#  tasks: 
+     - name : Disable_Avahi_Server_Software
+       include_tasks : Avahi_Server/Disable_Avahi_Server_Software.yml
+
+     - name : Enable-cron-Service
+       include_tasks : Cron_and_At_Daemons/Enable-cron-Service.yml
+
+     - name : Verify_Group_Who_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_cron.daily.yml
+
+     - name : Verify_Group_Who_Owns_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.daily.yml
+
+     - name : Verify_Group_Who_Owns_cron.hourly
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.hourly.yml
+
+     - name : Verify_Group_Who_Owns_cron.monthly
+       include_tasks :  Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.monthly.yml
+
+     - name : Verify_Group_Who_Owns_cron.weekly
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_cron.weekly.yml
+
+     - name : Verify_Group_Who_Owns_Crontab
+       include_tasks : Cron_and_At_Daemons/Verify_Group_Who_Owns_Crontab.yml
+
+     - name : Verify_Owner_on_cron.d
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.d.yml
+
+     - name : Verify_Owner_on_cron.daily
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.daily.yml
+
+     - name : Verify_Owner_on_cron.hourly
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.hourly.yml
+
+     - name : Verify_Owner_on_cron.weekly
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_cron.weekly.yml
+
+     - name : Verify_Owner_on_crontab
+       include_tasks : Cron_and_At_Daemons/Verify_Owner_on_crontab.yml
+
+     - name : Verify_Permissions_on_cron.d
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.d.yml
+
+     - name : Verify_Permissions_on_cron.daily
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.daily.yml
+
+     - name : Verify_Permissions_on_cron.hourly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.hourly.yml
+
+     - name : Verify_Permissions_on_cron.monthly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.monthly.yml
+
+     - name : Verify_Permissions_on_cron.weekly
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_cron.weekly.yml
+
+     - name : Verify_Permissions_on_crontab
+       include_tasks :  Cron_and_At_Daemons/Verify_Permissions_on_crontab.yml
+
+     - name : Verify-Group_Who_Owns_cron.d
+       include_tasks : Cron_and_At_Daemons/Verify-Group_Who_Owns_cron.d.yml
+
+     - name : Disable_DHCP-Service
+       include_tasks : DHCP/Disable_DHCP-Service.yml
+
+     - name : Disable_named_Service
+       include_tasks : DNS_Server/Disable_named_Service.yml
+
+     - name : Disable_vsftpd_Service
+       include_tasks : FTP_Server/Disable_vsftpd_Service.yml
+
+     - name : Disable_Dovecot_Service
+       include_tasks : IMAP_and_POP3_Server/Disable_Dovecot_Service.yml
+
+     - name : Ensure-LDAP-client-is-not-installed
+       include_tasks : LDAP/Ensure-LDAP-client-is-not-installed.yml
+
+     - name : Disable-Postfix-Network-Listening
+       include_tasks: Mail_Server_Software/Disable-Postfix-Network-Listening.yml
+
+     - name : A-remote_time_server_for_Chrony_is_configured
+       include_tasks : Network_Time_Protocol/A-remote_time_server_for_Chrony_is_configured.yml 
+
+     - name : Ensure_that_chronyd_is_running_under_chrony_user_account
+       include_tasks : Network_Time_Protocol/Ensure_that_chronyd_is_running_under_chrony_user_account.yml
+
+     - name : Disable_Network_File-System-(nfs)
+       include_tasks: NFS_and_RPC/Disable_Network_File-System-(nfs).yml
+
+     - name : Disable-rpcbind-Service
+       include_tasks : NFS_and_RPC/Disable-rpcbind-Service.yml
+
+     - name : Disable-the-CUPS-Service
+       include_tasks : Print_Support/Disable-the-CUPS-Service.yml
+
+     - name : Disable-Squid 
+       include_tasks : Proxy_Server/Disable-Squid.yml
+
+     - name : Disable-Samba 
+       include_tasks : Samba_(SMB)/Disable-Samba.yml
+
+     - name : snmp-server
+       include_tasks : snmp_server/snmp-server.yml
+
+     - name : Disable_graphical-user-interface
+       include_tasks: SSH_Server/Disable_graphical-user-interface.yml
+
+     - name : Disable-Host-Based-Authentication
+       include_tasks: SSH_Server/Disable-Host-Based-Authentication.yml
+     - name : Disable-SSH-Access-via-Empty-Passwords
+       include_tasks: SSH_Server/Disable-SSH-Access-via-Empty-Passwords.yml
+
+     - name : Disable-SSH-Root-Login
+       include_tasks: SSH_Server/Disable-SSH-Root-Login.yml
+
+     - name : Disable-SSH-Support-for-.rhosts-Files
+       include_tasks: SSH_Server/Disable-SSH-Support-for-.rhosts-Files.yml
+
+     - name : Disable-SSH-TCP-Forwarding
+       include_tasks: SSH_Server/Disable-SSH-TCP-Forwarding.yml
+
+     - name : Do-Not-Allow-SSH-Environment-Options
+       include_tasks: SSH_Server/Do-Not-Allow-SSH-Environment-Options.yml
+
+     - name : Ensure-SSH-MaxStartups-is-configured
+       include_tasks: SSH_Server/Ensure-SSH-MaxStartups-is-configured.yml
+
+     - name : Set-SSH-authentication-attempt-limit
+       include_tasks: SSH_Server/Set-SSH-authentication-attempt-limit.yml
+
+     - name : Set-SSH-Client-Alive-Count-Max
+       include_tasks: SSH_Server/Set-SSH-Client-Alive-Count-Max.yml
+
+     - name : Set-SSH-Daemon-LogLevel-to-VERBOSE
+       include_tasks: SSH_Server/Set-SSH-Daemon-LogLevel-to-VERBOSE.yml
+
+     - name : Set-SSH-Idle-Timeout-Interval
+       include_tasks: SSH_Server/Set-SSH-Idle-Timeout-Interval.yml
+
+     - name : Set-SSH-MaxSessions-limit
+       include_tasks: SSH_Server/Set-SSH-MaxSessions-limit.yml
+
+     - name : Verify-Group-Who-Owns-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Group-Who-Owns-SSH-Server-config-file.yml
+
+     - name : Verify-Owner-on-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Owner-on-SSH-Server-config-file.yml
+
+     - name : Verify-Permissions-on-SSH-Server-config-file
+       include_tasks: SSH_Server/Verify-Permissions-on-SSH-Server-config-file.yml
+
+     - name : Verify-Permissions-on-SSH-Server-Public-pub-Key-Files
+       include_tasks: SSH_Server/Verify-Permissions-on-SSH-Server-Public-pub-Key-Files.yml
+
+     - name : Disable-httpd-Service
+       include_tasks : Web_Server/Disable-httpd-Service.yml
+
+     - name : Disable-X11-Forwarding
+       include_tasks : X_Window_System/Disable-X11-Forwarding.yml

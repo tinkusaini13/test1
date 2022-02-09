@@ -1,0 +1,7 @@
+- name: require single user mode password
+  lineinfile:
+    create: true
+    dest: /usr/lib/systemd/system/rescue.service
+    regexp: ^#?ExecStart=
+    line: ExecStart=-/usr/lib/systemd/systemd-sulogin-shell rescue
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]

@@ -1,0 +1,17 @@
+- name: Enable service crond
+  block:
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+
+    - name: Enable service crond
+      service:
+        name: crond
+        enabled: 'yes'
+        state: started
+        masked: 'no'
+      when:
+        - '"cronie" in ansible_facts.packages'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+   
